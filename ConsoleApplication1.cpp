@@ -183,16 +183,18 @@ int main()
     double y = prompt("What is your altitude (m)? ");
     double x = 0.0; //prompt("What is your position (m)? ");
     double aDegrees = prompt("What is the angle of the LM where 0 is up (degrees)? ");
-	double t = 1.0; // Time in seconds
+    double t = 1.0; // Time in seconds
     double aRadians;            // Angle in radians
     double accelerationThrust;  // Acceleration due to thrust 
     double ddxThrust;           // Horizontal acceleration due to thrust
     double ddyThrust;           // Vertical acceleration due to thrust
     double ddx;                 // Total horizontal acceleration
     double ddy;                 // Total vertical acceleration
-    double v;                   // Total velocity
+    double v;                   // Total velocitywd
 
-	cout << endl;  // Add a new line for formatting
+	cout << endl;  // Add new lines for formatting
+    	cout << "For the next 5 seconds with the main engine on, the position of the lander is:" << endl;
+   	cout << endl;
 
 	// Loop through the simulator five times.
     for (int i = 0; i < 10; ++i) {
@@ -227,13 +229,15 @@ int main()
 		cout << i + 1 <<"s - x,y:(" << x << ", " << y << ")m ";
 		cout << " dx,dy:(" << dx << ", " << dy << ")m/s ";
 		cout << " speed:" << v << "m/s" ;
-        cout << " angle:" << aDegrees << " degrees\n";
+        cout << " angle:" << aDegrees << " deg\n";
 
 		// Prompt for a new angle every 5 seconds
 		if (i == 4) {
 			cout << endl; // Add a new line for formatting
 			aDegrees = prompt("What is the new angle of the LM where 0 is up(degrees)? ");
-			cout << endl; // Add a new line for formatting
+			cout << endl; // Add new lines for formatting
+            		cout << "For the next 5 seconds with the main engine on, the position of the lander is:" << endl;
+            		cout << endl;
 		}
     }
 
